@@ -1,0 +1,25 @@
+{
+  "name": "okusuri-functions",
+  "description": "おくすり記録を毎朝 8 時にメール送信する Cloud Functions",
+  "private": true,
+  "main": "lib/index.js",
+  "engines": {
+    "node": "22"
+  },
+  "scripts": {
+    "build": "tsc",
+    "build:watch": "tsc --watch",
+    "serve": "npm run build && firebase emulators:start --only functions",
+    "deploy": "npm run build && firebase deploy --only functions",
+    "logs": "firebase functions:log"
+  },
+  "dependencies": {
+    "firebase-admin": "^14.3.0",
+    "firebase-functions": "^7.3.2",
+    "nodemailer": "^9.0.5"
+  },
+  "devDependencies": {
+    "@types/nodemailer": "^8.0.1",
+    "typescript": "^7.0.2"
+  }
+}
